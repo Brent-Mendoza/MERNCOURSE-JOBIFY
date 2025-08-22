@@ -25,7 +25,6 @@ import { loader as EditJobLoader } from "./pages/EditJob"
 import { loader as AdminLoader } from "./pages/Admin"
 import { loader as StatsLoader } from "./pages/Stats"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import ErrorElement from "./components/ErrorElement"
 
 export const checkDefaultTheme = () => {
@@ -113,7 +112,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-      <ReactQueryDevtools initialisOpen={false} />{" "}
     </QueryClientProvider>
   )
 }
