@@ -19,7 +19,7 @@ export const getAllJobs = async (req, res) => {
   }
 
   const sortOptions = {
-    newest: "-createadAt",
+    newest: "-createdAt",
     oldest: "createdAt",
     "a-z": "position",
     "z-a": "-position",
@@ -92,7 +92,7 @@ export const showStats = async (req, res) => {
   const defaultStats = {
     pending: stats.pending || 0,
     interview: stats.interview || 0,
-    declined: stats.decline || 0,
+    declined: stats.declined || 0,
   }
 
   let monthlyApplications = await Job.aggregate([
