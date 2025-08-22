@@ -7,6 +7,7 @@ const Wrapper = styled.section`
     margin: 0 auto;
     height: var(--nav-height);
     align-items: center;
+    padding: 2rem 0rem;
   }
   .page {
     min-height: calc(100vh - var(--nav-height));

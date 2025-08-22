@@ -12,6 +12,8 @@ import cookieParser from "cookie-parser"
 import path, { dirname } from "path"
 import { fileURLToPath } from "url"
 import cloudinary from "cloudinary"
+import helmet from "helmet"
+import ExpressMongoSanitize from "express-mongo-sanitize"
 
 dotenv.config()
 
@@ -32,6 +34,8 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.static(path.resolve(__dirname, "./client/dist")))
 app.use(cookieParser())
 app.use(express.json())
+app.use(helmet())
+app.use(ExpressMongoSanitize())
 
 app.use("/api/v1/auth", AuthRouter)
 app.use("/api/v1/jobs", authenticateUser, JobRouter)
